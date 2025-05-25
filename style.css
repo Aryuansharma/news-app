@@ -1,0 +1,359 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav button {
+  background: #2c3e50;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+nav button:hover {
+  background: #2c3e50;
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+input, select {
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: #2c3e50;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2c3e50;
+}
+
+.news-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.news-card:hover {
+  transform: scale(1.02);
+}
+
+.news-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.news-card h3 {
+  margin: 0.5rem 0;
+}
+
+#toggleMode {
+  background: #8e44ad;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#toggleMode:hover {
+  background: #732d91;
+}
+body.dark {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark header {
+  background-color: #1e1e1e;
+}
+
+body.dark nav button,
+body.dark #toggleMode,
+body.dark button {
+  background-color: #333;
+  color: white;
+}
+
+body.dark nav button:hover,
+body.dark #toggleMode:hover,
+body.dark button:hover {
+  background-color: #444;
+}
+
+body.dark .news-card {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #444;
+}
+button, nav button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 8px 16px;
+}
+
+button:hover, nav button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+/* Normal button styles */
+button, nav button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 8px 16px;
+}
+
+/* Button hover effect */
+button:hover, nav button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Glowing effect for dark mode */
+body.dark button,
+body.dark nav button {
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.7), 0 0 12px rgba(0, 255, 255, 0.5);
+  background-color: #222;
+  color: #fff;
+}
+
+body.dark button:hover,
+body.dark nav button:hover {
+  box-shadow: 0 0 14px rgba(0, 255, 255, 0.9), 0 0 20px rgba(0, 255, 255, 0.7);
+}
+/* Weather Effects */
+.weather-clear {
+  background: linear-gradient(to top, #fceabb, #f8b500);
+}
+
+.weather-rain {
+  background: url('https://i.gifer.com/7RtW.gif') center/cover no-repeat;
+}
+
+.weather-snow {
+  background: url('https://i.gifer.com/7SkM.gif') center/cover no-repeat;
+}
+
+.weather-clouds {
+  background: linear-gradient(to top, #d7d2cc, #304352);
+}
+
+.weather-thunderstorm {
+  background: linear-gradient(to top, #3a3a3a, #000000);
+}
+
+.weather-haze,
+.weather-mist {
+  background: linear-gradient(to top, #bdc3c7, #2c3e50);
+}
+
+/* Apply effects to the section */
+#weather {
+  transition: background 0.5s ease;
+  padding: 20px;
+  border-radius: 12px;
+  color: #fff;
+}
+/* Default light mode - black text */
+#weatherResult, #forecastContainer {
+  color: black;
+}
+
+/* Dark mode - white text */
+body.dark #weatherResult,
+body.dark #forecastContainer {
+  color: white;
+}
+/* Forecast container text */
+#forecastContainer > div {
+  color: inherit; /* so it inherits black or white automatically */
+}
+/* Default light mode - black text */
+#weatherResult, #forecastContainer, 
+#weather h2, #weather h3 {
+  color: black;
+}
+
+/* Dark mode - white text */
+body.dark #weatherResult,
+body.dark #forecastContainer,
+body.dark #weather h2,
+body.dark #weather h3 {
+  color: white;
+}
+/* Search button styling */
+#search button {
+  background: linear-gradient(45deg, #0f3c6e, #1f4974);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(1, 76, 151, 0.959);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search button:hover {
+  background: linear-gradient(45deg, #357ABD, #4a90e2);
+  box-shadow: 0 6px 12px rgba(53, 122, 189, 0.6);
+}
+/* Creative animated gradient background for search button */
+#search button {
+  background: linear-gradient(270deg, #ff6a00, #ee0979, #ff6a00, #ee0979);
+  background-size: 800% 800%;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(238, 9, 121, 0.6);
+  transition: box-shadow 0.3s ease;
+  animation: gradientBG 8s ease infinite;
+}
+
+/* Hover effect */
+#search button:hover {
+  box-shadow: 0 6px 25px rgba(255, 106, 0, 0.8);
+}
+
+/* Keyframes for animated gradient */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Animate heading: fade in and slide down */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header h1 {
+  animation: fadeSlideDown 1.2s ease forwards;
+  opacity: 0; /* start hidden, animation makes it visible */
+}
+/* Base heading style with animation */
+header h1 {
+  animation: fadeSlideDown 1.2s ease forwards;
+  opacity: 0; /* hidden initially */
+  color: #007bff; /* default blue color matching icons */
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-shadow: 0 0 8px #007bff; /* initial glow */
+  transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+/* Glow effect */
+header h1.glow {
+  text-shadow:
+    0 0 8px #007bff,
+    0 0 15px #007bff,
+    0 0 20px #007bff,
+    0 0 30px #00bfff;
+}
+
+/* Dark mode overrides */
+body.dark header h1 {
+  color: #66ccff;
+  text-shadow:
+    0 0 10px #66ccff,
+    0 0 20px #66ccff,
+    0 0 30px #99ddff,
+    0 0 40px #bbf1ff;
+}
+/* Reusable animated glowing heading style */
+.glowing-heading {
+  opacity: 0; /* start hidden */
+  animation: fadeSlideDown 1.2s ease forwards;
+  color: #007bff; /* default icon color */
+  text-shadow: 0 0 8px #007bff;
+  transition: color 0.5s ease, text-shadow 0.5s ease;
+  font-weight: 600;
+}
+
+/* Glow effect to add after animation */
+.glowing-heading.glow {
+  text-shadow:
+    0 0 8px #007bff,
+    0 0 15px #007bff,
+    0 0 20px #007bff,
+    0 0 30px #00bfff;
+}
+
+/* Dark mode overrides */
+body.dark .glowing-heading {
+  color: #66ccff;
+  text-shadow:
+    0 0 10px #66ccff,
+    0 0 20px #66ccff,
+    0 0 30px #99ddff,
+    0 0 40px #bbf1ff;
+}

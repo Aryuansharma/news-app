@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart News Weather Browser</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <button id="toggleMode">🌙Dark Mode</button>
+
+    <h1 class="glowing-heading">Browser</h1>
+   <nav>
+  <button onclick="showSection('weather')"><i class="fas fa-cloud-sun"></i> Weather</button>
+  <button onclick="showSection('news')"><i class="fas fa-newspaper"></i> News</button>
+  <button onclick="showSection('search')"><i class="fas fa-search"></i> Search</button>
+</nav>
+
+  </header>
+
+  <main>
+    <section id="weather" class="active">
+  <h2 class="glowing-heading">Weather</h2>
+  <input type="text" id="weatherCity" placeholder="Enter city" />
+  <button onclick="getWeather()">Get Weather</button>
+  <button onclick="getWeatherByLocation()">📍 Use My Location</button>
+
+  <div id="weatherResult"></div>
+
+  <!-- Forecast -->
+  <h3 class="glowing-heading">5-Day Forecast</h3>
+  <div id="forecastContainer" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+
+  <!-- Graph -->
+  <canvas id="weatherChart" width="400" height="200"></canvas>
+</section>
+
+<section id="news">
+  <h2 class ="glowing-heading">Top News</h2>
+
+  <!-- ✅ Moved here inside the news section -->
+  <select id="newsCategory" onchange="getNews()">
+    <option value="">All</option>
+    <option value="technology">Technology</option>
+    <option value="sports">Sports</option>
+    <option value="business">Business</option>
+  </select>
+
+  <div id="newsContainer"></div>
+</section>
+
+    
+
+  <section id="search">
+      <h2 class="glowing-heading">The Web</h2>
+      <input type="text" id="searchQuery" placeholder="Search DuckDuckGo" />
+      <button onclick="webSearch()">Search</button>
+      <div id="searchResults"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

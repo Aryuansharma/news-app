@@ -525,3 +525,10 @@ body.dark .modal-content {
   background: #222;
   color: rgb(50, 41, 99);
 }
+#stocks {
+  padding: 20px;
+}
+#stockResult {
+  margin-top: 10px;
+  font-size: 18px;
+}

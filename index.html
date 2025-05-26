@@ -49,6 +49,7 @@
 
     <h1 class="glowing-heading">Browser</h1>
    <nav>
+  <button onclick="showSection('stocks')"><i class="fas fa-chart-line"></i> Stocks</button>
   <button onclick="showSection('weather')"><i class="fas fa-cloud-sun"></i> Weather</button>
   <button onclick="showSection('news')"><i class="fas fa-newspaper"></i> News</button>
   <button onclick="showSection('search')"><i class="fas fa-search"></i> Search</button>
@@ -60,6 +61,13 @@
 
   <main>
    
+<section id="stocks">
+  <h2 class="glowing-heading">📊 Stock Market</h2>
+  <input type="text" id="stockSymbol" placeholder="Enter stock symbol (e.g., AAPL)" />
+  <button onclick="getStock()">Get Stock Info</button>
+  <div id="stockResult"></div>
+</section>
+
 
     <section id="games">
   <h2 class="glowing-heading"> Play Games</h2>

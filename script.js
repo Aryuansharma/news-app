@@ -1,5 +1,5 @@
 const apiKeyWeather = "8d949a7c6bf18345b8b18fbf39b89c83";
-const apiKeyNews = "236a59c4b3bdab8303ba7c46d11257aa";
+const apiKeyNews = "111c0e5d381d3cacd4a244e260883dee";
 
 const apiKey = "8d949a7c6bf18345b8b18fbf39b89c83"; // replace this with your real OpenWeather key
 
@@ -240,4 +240,31 @@ document.getElementById("volumeControl").oninput = (e) => {
   const volume = e.target.value / 100;
   console.log("Volume set to:", volume);
 };
+function getStock() {
+  const symbol = document.getElementById("stockSymbol").value.toUpperCase();
+  const apiKey = "ec8b12fe380d42beb92b41344b5c2ad2"; // Your Twelve Data API key
+  const url = `https://api.twelvedata.com/quote?symbol=${symbol}&apikey=${apiKey}`;
+
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      if (data.code || !data.price) {
+        throw new Error("Invalid stock symbol or API error.");
+      }
+
+      const result = `
+        <h3>${data.name || symbol}</h3>
+        <p>📈 Price: $${data.price}</p>
+        <p>${data.percent_change >= 0 ? "🔺" : "🔻"} Change: ${data.change} (${data.percent_change}%)</p>
+      `;
+      document.getElementById("stockResult").innerHTML = result;
+    })
+    .catch(err => {
+      document.getElementById("stockResult").innerHTML = "<p>Failed to fetch stock data.</p>";
+      console.error(err);
+    });
+}
+
+    
+
 

@@ -215,4 +215,29 @@ window.addEventListener("DOMContentLoaded", () => {
     document.querySelector("main").style.display = "none";
   }
 });
+document.getElementById("openSettings").onclick = () => {
+  document.getElementById("settingsModal").style.display = "flex";
+};
+
+document.getElementById("closeSettings").onclick  = () => {
+  document.getElementById("settingsModal").style.display = "none";
+};
+
+document.getElementById("darkModeToggle").onchange = (e) => {
+  document.body.classList.toggle("dark", e.target.checked);
+};
+
+document.getElementById("brightnessControl").oninput = (e) => {
+  document.body.style.filter = `brightness(${e.target.value}%)`;
+};
+
+document.getElementById("fontSizeControl").oninput = (e) => {
+  document.body.style.fontSize = `${e.target.value}px`;
+};
+
+document.getElementById("volumeControl").oninput = (e) => {
+  // Placeholder: Future audio volume handling
+  const volume = e.target.value / 100;
+  console.log("Volume set to:", volume);
+};
 

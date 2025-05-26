@@ -485,3 +485,43 @@ header, main {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+.settings-btn {
+  position: left;
+  top: 15px;
+  right: 15px;
+  background: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 10px #00000066;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000088;
+  z-index: 998;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #2c3e50;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: left;
+}
+
+body.dark .modal-content {
+  background: #222;
+  color: rgb(50, 41, 99);
+}

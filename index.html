@@ -19,6 +19,32 @@
   </div>
 </section>
   <header>
+    <button id="openSettings" class="settings-btn"><i class="fas fa-cog"></i></button>
+
+<div id="settingsModal" class="modal">
+  <div class="modal-content">
+    <h2>App Settings</h2>
+
+    
+    <label>
+      Brightness:
+      <input type="range" id="brightnessControl" min="50" max="150" value="100" />
+    </label>
+
+    <label>
+      Font Size:
+      <input type="range" id="fontSizeControl" min="12" max="24" value="16" />
+    </label>
+
+    <label>
+      Volume:
+      <input type="range" id="volumeControl" min="0" max="100" value="50" />
+    </label>
+
+    <button id="closeSettings">Close</button>
+  </div>
+</div>
+
     <button id="toggleMode">🌙Dark Mode</button>
 
     <h1 class="glowing-heading">Browser</h1>

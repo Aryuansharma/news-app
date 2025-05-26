@@ -10,6 +10,14 @@
 </head>
 
 <body>
+  
+  <section id="welcome">
+  <div class="welcome-container">
+    <h1 class="glow">🌐 Welcome to Browser</h1>
+    <p>Your all-in-one app for News, Weather, Search, and Games.</p>
+    <button onclick="enterApp()">Enter</button>
+  </div>
+</section>
   <header>
     <button id="toggleMode">🌙Dark Mode</button>
 
@@ -18,11 +26,25 @@
   <button onclick="showSection('weather')"><i class="fas fa-cloud-sun"></i> Weather</button>
   <button onclick="showSection('news')"><i class="fas fa-newspaper"></i> News</button>
   <button onclick="showSection('search')"><i class="fas fa-search"></i> Search</button>
+  <button onclick="showSection('games')"><i class="fas fa-gamepad"></i> Games</button>
+
 </nav>
 
   </header>
 
   <main>
+   
+
+    <section id="games">
+  <h2 class="glowing-heading"> Play Games</h2>
+  <div id="gamesContainer">
+    <button onclick="openGame('https://play2048.co')">2048</button>
+    <button onclick="openGame('https://chromedino.com/')">Dino Game</button>
+    <button onclick="openGame('https://sudoku.com/')">Sudoku</button>
+    <!-- Add more games if needed -->
+  </div>
+</section>
+
     <section id="weather" class="active">
   <h2 class="glowing-heading">Weather</h2>
   <input type="text" id="weatherCity" placeholder="Enter city" />

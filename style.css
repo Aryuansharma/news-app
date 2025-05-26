@@ -357,3 +357,131 @@ body.dark .glowing-heading {
     0 0 30px #99ddff,
     0 0 40px #bbf1ff;
 }
+body .dark .glowing-heading {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  background-color: var(--btn-color);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px var(--shadow-color);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+#gamesContainer button:hover {
+  transform: scale(1.05);
+}
+#welcome {
+  height: 100vh;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.welcome-container button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  background: #00bcd4;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00bcd4;
+}
+
+.glow {
+  font-size: 2.5rem;
+  color: #00e6e6;
+  text-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6;
+}
+/* General */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f2027;
+  color: white;
+  overflow-x: hidden;
+}
+
+header, main {
+  display: none;
+}
+
+/* Welcome Section */
+#welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.welcome-container {
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-container p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+.glow-text {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+}
+
+.brand {
+  color: #00ffe5;
+}
+
+/* Button */
+#welcome button {
+  padding: 12px 28px;
+  font-size: 16px;
+  background-color: #00bcd4;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#welcome button:hover {
+  background-color: #00e6e6;
+  box-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6;
+}
+
+/* Loader Spinner */
+.loader {
+  border: 6px solid #ccc;
+  border-top: 6px solid #00f0ff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: 20px auto;
+  animation: spin 1.5s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

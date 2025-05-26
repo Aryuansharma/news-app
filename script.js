@@ -191,4 +191,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+function openGame(url) {
+  window.open(url, "_blank");
+}
+function enterApp() {
+  document.getElementById("welcome").style.display = "none";
+  document.querySelector("header").style.display = "flex";
+  document.querySelector("main").style.display = "block";
+
+  sessionStorage.setItem("visited", "true"); // remember that user entered
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const visited = sessionStorage.getItem("visited");
+
+  if (visited) {
+    document.getElementById("welcome").style.display = "none";
+    document.querySelector("header").style.display = "flex";
+    document.querySelector("main").style.display = "block";
+  } else {
+    document.getElementById("welcome").style.display = "flex";
+    document.querySelector("header").style.display = "none";
+    document.querySelector("main").style.display = "none";
+  }
+});
 

@@ -242,21 +242,15 @@ document.getElementById("volumeControl").oninput = (e) => {
 };
 function getStock() {
   const symbol = document.getElementById("stockSymbol").value.toUpperCase();
-  const apiKey = "ec8b12fe380d42beb92b41344b5c2ad2"; // Replace with your actual API key
-  const url = `https://api.twelvedata.com/quote?symbol=${symbol}&apikey=${apiKey}`;
+  const apiKey = "ec8b12fe380d42beb92b41344b5c2ad2";
+  const quoteUrl = `https://api.twelvedata.com/quote?symbol=${symbol}&apikey=${apiKey}`;
+  const timeSeriesUrl = `https://api.twelvedata.com/time_series?symbol=${symbol}&interval=1day&outputsize=7&apikey=${apiKey}`;
 
-  fetch(url)
-    .then(res => {
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-      return res.json();
-    })
+  // Fetch quote for current price
+  fetch(quoteUrl)
+    .then(res => res.json())
     .then(data => {
-      if (data.code) {
-        throw new Error(`API error: ${data.message}`);
-      }
-
+      if (data.code || !data.price) throw new Error("Invalid symbol or API error.");
       const result = `
         <h3>${data.name || symbol}</h3>
         <p>📈 Price: $${data.price}</p>
@@ -265,10 +259,47 @@ function getStock() {
       document.getElementById("stockResult").innerHTML = result;
     })
     .catch(err => {
-      document.getElementById("stockResult").innerHTML = `<p>Error: ${err.message}</p>`;
+      document.getElementById("stockResult").innerHTML = "<p>Failed to fetch stock data.</p>";
       console.error(err);
     });
+
+  // Fetch 7-day time series for graph
+  fetch(timeSeriesUrl)
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === "error") throw new Error("Failed to fetch time series");
+
+      const labels = data.values.map(d => d.datetime).reverse();
+      const prices = data.values.map(d => parseFloat(d.close)).reverse();
+
+      const ctx = document.getElementById("stockChart").getContext("2d");
+      if (window.stockChart) window.stockChart.destroy(); // clear previous chart
+      window.stockChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels,
+          datasets: [{
+            label: `${symbol} Price (Last 7 Days)`,
+            data: prices,
+            backgroundColor: "rgba(0, 123, 255, 0.2)",
+            borderColor: "rgba(0, 123, 255, 1)",
+            borderWidth: 2,
+            fill: true,
+            tension: 0.3
+          }]
+        },
+        options: {
+          scales: {
+            y: { beginAtZero: false }
+          }
+        }
+      });
+    })
+    .catch(err => {
+      console.error("Graph error:", err);
+    });
 }
+
 
 
     

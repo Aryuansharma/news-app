@@ -532,3 +532,27 @@ body.dark .modal-content {
   margin-top: 10px;
   font-size: 18px;
 }
+/* Light mode by default */
+.news-card {
+  background-color: #f9f9f9;
+  color: #222;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Dark mode */
+body.dark .news-card {
+  background-color: #1e1e1e;
+  color: #eee;
+  box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
+
+body.dark #newsContainer {
+  background-color: transparent;
+}
+body.dark .news-card h3 {
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff;
+}

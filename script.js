@@ -242,14 +242,19 @@ document.getElementById("volumeControl").oninput = (e) => {
 };
 function getStock() {
   const symbol = document.getElementById("stockSymbol").value.toUpperCase();
-  const apiKey = "ec8b12fe380d42beb92b41344b5c2ad2"; // Your Twelve Data API key
+  const apiKey = "ec8b12fe380d42beb92b41344b5c2ad2"; // Replace with your actual API key
   const url = `https://api.twelvedata.com/quote?symbol=${symbol}&apikey=${apiKey}`;
 
   fetch(url)
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    })
     .then(data => {
-      if (data.code || !data.price) {
-        throw new Error("Invalid stock symbol or API error.");
+      if (data.code) {
+        throw new Error(`API error: ${data.message}`);
       }
 
       const result = `
@@ -260,10 +265,11 @@ function getStock() {
       document.getElementById("stockResult").innerHTML = result;
     })
     .catch(err => {
-      document.getElementById("stockResult").innerHTML = "<p>Failed to fetch stock data.</p>";
+      document.getElementById("stockResult").innerHTML = `<p>Error: ${err.message}</p>`;
       console.error(err);
     });
 }
+
 
     
 

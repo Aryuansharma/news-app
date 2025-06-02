@@ -270,6 +270,12 @@ function getStock() {
 
     });
 }
+function playRadio(url) {
+  const player = document.getElementById("musicPlayer");
+  player.src = url;
+  player.play();
+}
+
 
 
     

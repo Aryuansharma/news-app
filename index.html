@@ -113,30 +113,11 @@
 </section>
 
 <section id="music">
-  <h2 class="glowing-heading">🎶 Music / Radio</h2>
-  <iframe
-  width="100%"
-  height="315"
-  src="https://www.youtube.com/embed/videoseries?list=RDXTp5jaRU3Ws"
-  title="Punjabi Song"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-
-  <audio id="musicPlayer" controls>
-    <source src="https://example.com/sample.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-  <div id="radioStations">
-<button onclick="playRadio('https://s3.radio.co/s98b7db5e9/listen')">Radio City Punjabi</button>
-<button onclick="playRadio('https://radioindia.net/radio/punjabi.mp3')">Radio India Punjabi</button>
-<button onclick="playRadio('https://radioindia.net/radio/mirchi.mp3')">Radio Mirchi</button>
-<button onclick="playRadio('https://prclive1.listenon.in/;stream.mp3')">AIR Punjabi</button>
-<button onclick="playRadio('https://streams.radio.co/sccf7029b6/listen')">Desi World Radio</button>
-
-    <button onclick="playRadio('http://stream-url1')">Station 1</button>
-    <button onclick="playRadio('http://stream-url2')">Station 2</button>
+  <h2 class="glowing-heading"> Punjabi Music Playlist</h2>
+  <div class="music-player">
+    <iframe width="100%" height="315" 
+      src="https://www.youtube.com/embed/videoseries?list=RDXTp5jaRU3Ws" 
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 </section>
 
@@ -151,5 +132,6 @@
 
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
 </body>
 </html>

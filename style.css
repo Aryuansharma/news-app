@@ -556,3 +556,31 @@ body.dark .news-card h3 {
   color: #00f7ff;
   text-shadow: 0 0 10px #00f7ff;
 }
+#music-radio {
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--card-bg, #f9f9f9);
+  border-radius: 8px;
+}
+
+.music-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.music-tabs button {
+  padding: 10px 20px;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.music-tabs button:hover {
+  background-color: #ccc;
+}
+
+.music-content {
+  margin-top: 10px;
+}

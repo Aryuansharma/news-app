@@ -95,7 +95,7 @@ button:hover {
 }
 
 #toggleMode {
-  background: #8e44ad;
+  background: #2c3e50;
   border: none;
   color: white;
   padding: 0.5rem 1rem;
@@ -104,7 +104,7 @@ button:hover {
 }
 
 #toggleMode:hover {
-  background: #732d91;
+  background: #2c3e50;
 }
 body.dark {
   background-color: #121212;
@@ -252,7 +252,7 @@ body.dark #weather h3 {
 }
 /* Creative animated gradient background for search button */
 #search button {
-  background: linear-gradient(270deg, #ff6a00, #ee0979, #ff6a00, #ee0979);
+  background: linear-gradient(270deg, #2c3e50, #2c3e50, #2c3e50, #2c3e50);
   background-size: 800% 800%;
   color: white;
   border: none;
@@ -261,14 +261,14 @@ body.dark #weather h3 {
   font-size: 1.1rem;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(238, 9, 121, 0.6);
+  box-shadow: 0 4px 15px #007bff(238, 9, 121, 0.6);
   transition: box-shadow 0.3s ease;
   animation: gradientBG 8s ease infinite;
 }
 
 /* Hover effect */
 #search button:hover {
-  box-shadow: 0 6px 25px rgba(255, 106, 0, 0.8);
+  box-shadow: 0 6px 25px #007bff(255, 106, 0, 0.8);
 }
 
 /* Keyframes for animated gradient */

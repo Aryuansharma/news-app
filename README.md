@@ -1,4 +1,4 @@
-
+completed 
 #  Smart News Weather Browser
 
 A modern smart web application that combines **News, Weather, Search, Stocks, Games, and AI Assistant** into one clean and user-friendly interface.

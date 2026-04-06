@@ -22,7 +22,7 @@ A modern smart web application that combines **News, Weather, Search, Stocks, Ga
 - AI: OpenAI / Rasa (Chatbot)
 
 ##  Installation
-```bash
+```bashh
 git clone https://github.com/aryuansharma/news-app.git
 cd project-name
 npm install

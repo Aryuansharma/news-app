@@ -27,3 +27,4 @@ git clone https://github.com/aryuansharma/news-app.git
 cd project-name
 npm install
 npm start
+//added changes not added to live

@@ -1,4 +1,4 @@
-website is live at :- 
+
 https://aryuansharma.github.io/news-app/
 #  Smart News Weather Browser
 
